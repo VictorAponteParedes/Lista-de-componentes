@@ -11,7 +11,7 @@ export {
     FontAwesomeIcon
 }
 
-import { IconTypes } from "../../types/icons-types";
+import { IconTypes } from "../../types/types-projecs";
 
 
 export const IconComponent = (props: IconTypes) => {
