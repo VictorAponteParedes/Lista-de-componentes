@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Linking, Platform } from "react-native";
 import { useEffect, useState } from 'react';
 import { ModalTypes } from "../../types/types-projecs";
 import { AntDesign } from '../icon-custom/icon-component';
@@ -8,9 +8,17 @@ import { estiloModal } from './modal-component-style';
 
 
 export const ModalComponent = (props: ModalTypes) => {
-    const { title, subTitle, color, titleColor, subTitleColor } = props;
+    const { title, subTitle, color, titleColor, subTitleColor, buttomUpdate, buttomText, buttomContainerColor, androidUrl, iosUrl } = props;
 
     const [closeModal, setCloseModal] = useState<boolean>(true)
+
+    const handlePress = () => {
+        const url = Platform.OS === 'ios' ? iosUrl : androidUrl;
+        if (url) {
+            Linking.openURL(url);
+        }
+    };
+
 
     const closeModalComponent = () => {
         setCloseModal(!closeModal)
@@ -30,8 +38,18 @@ export const ModalComponent = (props: ModalTypes) => {
                             </TouchableOpacity>
                             <Text style={[estiloModal.title, { color: titleColor || '#000' }]}>{title}</Text>
                             <Text style={[estiloModal.subTitle, { color: subTitleColor || '#000' }]}>{subTitle}</Text>
+                            {
+                                buttomUpdate && (
+                                    <View style={[estiloModal.buttomContainer, { backgroundColor: buttomContainerColor }]}>
+                                        <TouchableOpacity onPress={handlePress}>
+                                            <Text style={estiloModal.textButtom}>{buttomText}</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                )
+                            }
+
                         </View>
-                    </View>
+                    </View >
                 )
             }
 
