@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { HomeScreen } from '../screens/home/home-screen';
 import { ProfileScreen } from '../screens/profile/profile-screen';
 import { ModalScreen } from '../screens/modal/modal-screen';
+import { inputCustomScreen } from '../screens/input-screen/input-screen';
 
 
 
@@ -40,6 +41,11 @@ export const MyNavigationStack = () => {
                 <Stack.Screen
                     name="ModalScreen"
                     component={ModalScreen}
+                />
+
+                <Stack.Screen
+                    name="InputCustomScreen"
+                    component={inputCustomScreen}
                 />
 
             </Stack.Navigator>

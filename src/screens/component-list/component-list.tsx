@@ -5,14 +5,25 @@ export const ComponentListScreen = ({ navigation }) => {
 
 
     return (
-        <TouchableOpacity onPress={() => {
+        <>
+            <TouchableOpacity onPress={() => {
 
-            navigation.navigate("ModalScreen")
-        }}>
-            <View style={estiloModalScreen.container}>
-                <Text style={estiloModalScreen.title}>Componente Modal</Text>
-            </View>
-        </TouchableOpacity>
+                navigation.navigate("ModalScreen")
+            }}>
+                <View style={estiloModalScreen.container}>
+                    <Text style={estiloModalScreen.title}>Componente Modal</Text>
+                </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+
+                navigation.navigate("InputCustomScreen")
+            }}>
+                <View style={estiloModalScreen.container}>
+                    <Text style={estiloModalScreen.title}>Componente Imput customer</Text>
+                </View>
+            </TouchableOpacity>
+
+        </>
     )
 }
 
@@ -21,7 +32,8 @@ const estiloModalScreen = StyleSheet.create({
         backgroundColor: "#33cadd",
         paddingVertical: 25,
         marginHorizontal: 20,
-        borderRadius: 20
+        borderRadius: 20,
+        marginTop: 20
     },
     title: {
         textAlign: "center",
