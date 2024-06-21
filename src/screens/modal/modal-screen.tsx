@@ -8,13 +8,17 @@ export const ModalScreen = () => {
     return (
 
         <ModalComponent
-            title="¿Estás seguro de que deseas eliminar?"
-            subTitle="Esta acción no se puede deshacer. Confirma tu decisión."
-            color="#ffcccc"
-            titleColor="#cf2f46"
-            subTitleColor="#cf2f46"
+            title="Actualización Requerida"
+            subTitle="Tu versión de la aplicación está desactualizada. Por favor, actualiza a la última versión para continuar disfrutando de todas las funcionalidades y mejoras."
+            color="#ffebcc"
+            titleColor="#333333"
+            subTitleColor="#666666"
+            buttomUpdate={true}
+            buttomText="Actualizar"
+            buttomContainerColor="#989898"
+            androidUrl="https://play.google.com/store/search?q=nueva+americana&c=apps"
+            iosUrl="https://apps.apple.com/us/app/nueva-americana/id123456789"
         />
-
 
 
     )
