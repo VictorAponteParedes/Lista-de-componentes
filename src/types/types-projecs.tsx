@@ -10,4 +10,9 @@ export interface ModalTypes {
     color?: string;
     titleColor?: string;
     subTitleColor?: string;
+    buttomUpdate?: boolean;
+    buttomText?: string;
+    buttomContainerColor?: string;
+    androidUrl?: string;
+    iosUrl?: string;
 }
