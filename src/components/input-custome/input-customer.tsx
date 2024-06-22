@@ -1,36 +1,44 @@
-import React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
-import { useForm, Controller } from "react-hook-form";
+import React from 'react';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {useForm, Controller} from 'react-hook-form';
 
-export const InputCustomComponent = ({ name, control }) => {
-    const { control: formControl } = useForm();
+import {InputTypes} from '../../types/types-projecs';
 
-    return (
-        <View style={styles.container}>
-            <Controller
-                control={control || formControl}
-                name={name}
-                render={({ field: { onChange, onBlur, value } }) => (
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={onChange}
-                        onBlur={onBlur}
-                        value={value}
-                    />
-                )}
-            />
-        </View>
-    );
+export const InputCustomComponent = (props: InputTypes) => {
+  const {control, name, placeholderText} = props;
+  const {control: formControl} = useForm();
+
+  return (
+    <View style={styles.container}>
+      <Controller
+        control={control || formControl}
+        name={name}
+        render={({field: {onChange, onBlur, value}}) => (
+          <TextInput
+            style={styles.input}
+            onChangeText={onChange}
+            onBlur={onBlur}
+            value={value}
+            placeholder={placeholderText}
+            placeholderTextColor={'grey'}
+          />
+        )}
+      />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        marginBottom: 20,
-    },
-    input: {
-        height: 40,
-        width: 300,
-        borderBottomWidth: 1,
-        borderColor: 'gray',
-    },
+  container: {
+    width: '90%',
+    marginBottom: 20,
+    alignSelf: 'center',
+  },
+  input: {
+    color: '#000',
+    height: 40,
+    borderBottomWidth: 1,
+    borderColor: 'gray',
+    width: '100%',
+  },
 });
