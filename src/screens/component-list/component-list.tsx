@@ -20,6 +20,16 @@ export const ComponentListScreen = ({navigation}) => {
           <Text style={estiloModalScreen.title}>Componente Imput customer</Text>
         </View>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('HeaderScreen');
+        }}>
+        <View style={estiloModalScreen.container}>
+          <Text style={estiloModalScreen.title}>
+            Componente Header Navigation
+          </Text>
+        </View>
+      </TouchableOpacity>
     </>
   );
 };
