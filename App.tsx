@@ -14,12 +14,12 @@ const App = () => {
     const init = async () => {
       try {
         const check = await checkVersion({
-          version: '1.0.25', // versión local de la app
+          version: '1.0.25',
           iosStoreURL:
             'https://apps.apple.com/py/app/nueva-americana/id6450839651',
           androidStoreURL:
             'https://play.google.com/store/apps/details?id=com.konecta.tna',
-          country: 'jp', // valor por defecto es 'jp'
+          country: 'us',
         });
 
         if (check.result === 'new') {

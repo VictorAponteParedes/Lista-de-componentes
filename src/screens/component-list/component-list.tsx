@@ -30,6 +30,15 @@ export const ComponentListScreen = ({navigation}) => {
           </Text>
         </View>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('VposScreen');
+        }}>
+        <View style={estiloModalScreen.container}>
+          <Text style={estiloModalScreen.title}>Componente Method to pay</Text>
+        </View>
+      </TouchableOpacity>
     </>
   );
 };

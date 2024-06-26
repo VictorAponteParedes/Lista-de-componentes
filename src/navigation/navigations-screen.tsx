@@ -7,6 +7,7 @@ import {ProfileScreen} from '../screens/profile/profile-screen';
 import {ModalScreen} from '../screens/modal/modal-screen';
 import {InputCustomScreen} from '../screens/input-screen/input-screen';
 import {HeaderScreen} from '../screens/header-screen/header-screen';
+import {VposScreen} from '../screens/vpos-screen/vpos-screen';
 
 import {NavigationTabs} from './navigation-tab';
 
@@ -62,6 +63,14 @@ export const MyNavigationStack = () => {
         <Stack.Screen
           name="InputCustomScreen"
           component={InputCustomScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="VposScreen"
+          component={VposScreen}
           options={{
             headerShown: false,
           }}
